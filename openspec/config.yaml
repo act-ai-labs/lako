@@ -1,0 +1,54 @@
+schema: spec-driven
+
+context: |
+  Project: LAKO: Ledger-enabled AI Kiosk Operations
+  Domain: Retail + Services + Digital Payments (GCash ecosystem)
+
+  Tech stack:
+  - TypeScript
+  - Next.js (frontend)
+  - NestJS (backend)
+  - PostgreSQL (main DB)
+  - SQLite (offline mode)
+  - Qwen Coder (local builder)
+  - Claude AI (architect/reviewer)
+  - Cursor (development environment)
+
+  System capabilities:
+  - Sales & checkout
+  - Inventory management
+  - Supplier & delivery tracking
+  - Expenses & revenue reporting
+  - Discounts engine
+  - Offline-first transactions
+  - GCash cash-in / cash-out / load services
+  - Multi-payment support (cash, e-wallets, cards)
+
+  Core principle:
+  Everything must be defined in specs before implementation (Spec-Driven Development / OpenSpec).
+
+rules:
+  proposal:
+    - Must decompose system into modules
+    - Must include assumptions and open questions
+    - Must include edge cases (offline, payment failure, sync conflict)
+    - Must NOT include code
+    - Must include business rules for POS systems
+
+  specs:
+    - Must be strict and unambiguous
+    - Must define inputs, outputs, rules, errors, and state transitions
+    - Must include financial consistency rules
+    - Must define inventory safety rules (no negative stock)
+    - Must include offline sync behavior
+
+  tasks:
+    - Break into small, implementable units (max 2–4 hours)
+    - Each task must map to one spec section
+    - Must not mix UI + backend logic in one task
+
+  review:
+    - Must validate against spec compliance
+    - Must check financial correctness
+    - Must check inventory consistency
+    - Must flag missing edge cases

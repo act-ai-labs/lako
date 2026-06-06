@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="LAKO POS">
+  <rect width="512" height="512" rx="96" fill="#18181b"/>
+  <path d="M128 344V128h48v168h96v48H128Z" fill="#fafafa"/>
+  <path d="M304 344V128h48v84l72-84h56l-88 100 96 116h-60l-76-94v94h-48Z" fill="#fafafa"/>
+</svg>
