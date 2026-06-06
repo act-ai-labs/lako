@@ -10,3 +10,12 @@ data/
 *.sqlite
 *.db
 .DS_Store
+
+# AI assistant/local agent files
+.cursor/
+.claude/
+AGENTS.md
+CLAUDE.md
+**/AGENTS.md
+**/CLAUDE.md
+openspec/
