@@ -1,5 +1,9 @@
+import { config } from 'dotenv';
 import { DataSource, DataSourceOptions } from 'typeorm';
 import { ALL_ENTITIES, SyncQueue } from './entities';
+
+config({ path: '../../.env' });
+config({ path: '.env', override: false });
 
 export const POSTGRES_CONNECTION = 'default';
 export const SQLITE_CONNECTION = 'offline';
@@ -16,6 +20,10 @@ export function buildPostgresConfig(): DataSourceOptions {
     entities: ALL_ENTITIES,
     migrations: [__dirname + '/migrations/*{.ts,.js}'],
     synchronize: false,
+    ssl:
+      process.env.DATABASE_SSL === 'true'
+        ? { rejectUnauthorized: false }
+        : undefined,
     logging: process.env.NODE_ENV === 'development',
   };
 }

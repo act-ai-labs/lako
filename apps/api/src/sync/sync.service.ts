@@ -74,7 +74,7 @@ export class SyncService implements OnModuleInit {
         try {
           await this.applyToPostgres(item);
           item.status = SyncStatus.SYNCED;
-          item.syncedAt = new Date();
+          item.syncedAt = new Date().toISOString();
           item.errorMessage = null;
           await this.offlineQueueRepo.save(item);
           synced += 1;

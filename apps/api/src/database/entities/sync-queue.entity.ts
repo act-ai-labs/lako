@@ -30,8 +30,8 @@ export class SyncQueue {
   @Column({ type: 'text', nullable: true })
   errorMessage: string | null;
 
-  @Column({ type: 'datetime', nullable: true })
-  syncedAt: Date | null;
+  @Column({ type: 'varchar', nullable: true })
+  syncedAt: string | null;
 
   @CreateDateColumn()
   createdAt: Date;
