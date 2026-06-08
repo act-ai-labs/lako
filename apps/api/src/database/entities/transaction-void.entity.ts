@@ -23,7 +23,7 @@ export class TransactionVoid {
   @Column()
   reason: string;
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   authorizedById: string | null;
 
   @CreateDateColumn()

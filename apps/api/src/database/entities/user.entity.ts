@@ -26,7 +26,7 @@ export class User {
   @Column({ type: 'varchar', length: 20 })
   role: UserRole;
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   managerPinHash: string | null;
 
   @Column({ default: true })

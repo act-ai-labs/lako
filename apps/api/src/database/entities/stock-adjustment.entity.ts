@@ -32,7 +32,7 @@ export class StockAdjustment {
   @Column()
   reason: string;
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   adjustedById: string | null;
 
   @CreateDateColumn()

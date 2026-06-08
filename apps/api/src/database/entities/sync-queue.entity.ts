@@ -21,7 +21,7 @@ export class SyncQueue {
   @Column({ type: 'simple-json' })
   payload: Record<string, unknown>;
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   recordId: string | null;
 
   @Column({ type: 'varchar', length: 20, default: SyncStatus.PENDING })
@@ -30,7 +30,7 @@ export class SyncQueue {
   @Column({ type: 'text', nullable: true })
   errorMessage: string | null;
 
-  @Column({ type: 'timestamptz', nullable: true })
+  @Column({ type: 'datetime', nullable: true })
   syncedAt: Date | null;
 
   @CreateDateColumn()

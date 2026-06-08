@@ -1,5 +1,5 @@
 import { DataSource, DataSourceOptions } from 'typeorm';
-import { ALL_ENTITIES } from './entities';
+import { ALL_ENTITIES, SyncQueue } from './entities';
 
 export const POSTGRES_CONNECTION = 'default';
 export const SQLITE_CONNECTION = 'offline';
@@ -25,7 +25,7 @@ export function buildSqliteConfig(): DataSourceOptions {
     name: SQLITE_CONNECTION,
     type: 'better-sqlite3',
     database: process.env.SQLITE_PATH ?? './data/lako-offline.sqlite',
-    entities: ALL_ENTITIES,
+    entities: [SyncQueue],
     synchronize: true,
     logging: process.env.NODE_ENV === 'development',
   };

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ALL_ENTITIES } from './entities';
+import { ALL_ENTITIES, SyncQueue } from './entities';
 import {
   buildPostgresConfig,
   buildSqliteConfig,
@@ -24,7 +24,7 @@ import {
       useFactory: () => buildSqliteConfig(),
     }),
     TypeOrmModule.forFeature(ALL_ENTITIES, POSTGRES_CONNECTION),
-    TypeOrmModule.forFeature(ALL_ENTITIES, SQLITE_CONNECTION),
+    TypeOrmModule.forFeature([SyncQueue], SQLITE_CONNECTION),
   ],
   exports: [TypeOrmModule],
 })

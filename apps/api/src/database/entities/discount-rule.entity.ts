@@ -27,7 +27,7 @@ export class DiscountRule {
   @Column({ type: 'decimal', precision: 12, scale: 2 })
   value: string;
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   triggerValue: string | null;
 
   @Column({ default: false })

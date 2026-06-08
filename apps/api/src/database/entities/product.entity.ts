@@ -20,7 +20,7 @@ export class Product {
   @Column()
   name: string;
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   categoryId: string | null;
 
   @ManyToOne(() => Category, (category) => category.products, {
@@ -44,7 +44,7 @@ export class Product {
   @Column({ type: 'date', nullable: true })
   expiryDate: string | null;
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   barcode: string | null;
 
   @CreateDateColumn()

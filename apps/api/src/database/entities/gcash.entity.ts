@@ -47,7 +47,7 @@ export class GcashFloatAdjustment {
   @Column({ type: 'decimal', precision: 12, scale: 2 })
   newBalance: string;
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   authorizedById: string | null;
 
   @Column({ type: 'text', nullable: true })

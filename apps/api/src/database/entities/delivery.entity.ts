@@ -16,7 +16,7 @@ export class Delivery {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   poId: string | null;
 
   @ManyToOne(() => PurchaseOrder, (po) => po.deliveries, { nullable: true })

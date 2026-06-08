@@ -31,7 +31,7 @@ export class Expense {
   @Column({ type: 'text', nullable: true })
   description: string | null;
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   supplierId: string | null;
 
   @ManyToOne(() => Supplier, (supplier) => supplier.expenses, {

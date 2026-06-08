@@ -17,10 +17,10 @@ export class Supplier {
   @Column()
   name: string;
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   contact: string | null;
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   paymentTerms: string | null;
 
   @Column({ type: 'text', nullable: true })

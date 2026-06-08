@@ -23,7 +23,7 @@ export class TransactionItem {
   @JoinColumn({ name: 'transactionId' })
   transaction: Transaction;
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   productId: string | null;
 
   @ManyToOne(() => Product, { nullable: true })

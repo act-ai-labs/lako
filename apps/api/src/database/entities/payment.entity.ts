@@ -29,7 +29,7 @@ export class Payment {
   @Column({ type: 'decimal', precision: 12, scale: 2 })
   amount: string;
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   referenceNo: string | null;
 
   @CreateDateColumn()

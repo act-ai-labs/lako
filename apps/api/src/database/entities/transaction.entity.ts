@@ -30,7 +30,7 @@ export class Transaction {
   @Column({ type: 'varchar', length: 20, default: TransactionStatus.PENDING })
   status: TransactionStatus;
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   cashierId: string | null;
 
   @Column({ type: 'timestamptz', nullable: true })
